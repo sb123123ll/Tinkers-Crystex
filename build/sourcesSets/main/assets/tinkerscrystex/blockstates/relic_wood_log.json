@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y": { "model": "tinkerscrystex:relic_wood_log" },
+    "axis=z": { "model": "tinkerscrystex:relic_wood_log", "x": 90 },
+    "axis=x": { "model": "tinkerscrystex:relic_wood_log", "x": 90, "y": 90 },
+    "axis=none": { "model": "tinkerscrystex:relic_wood_log_bark" }
+  }
+}

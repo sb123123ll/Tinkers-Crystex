@@ -1,0 +1,6 @@
+{
+    "parent": "block/vine_u",
+    "textures": {
+        "vine": "tinkerscrystex:blocks/void_weeping_vines"
+    }
+}

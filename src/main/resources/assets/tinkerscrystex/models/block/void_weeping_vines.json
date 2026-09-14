@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "tinkerscrystex:blocks/void_weeping_vines"
+    }
+}

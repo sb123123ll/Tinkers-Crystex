@@ -1,0 +1,174 @@
+/*
+ * Mantle
+ * Master build file
+ * Based on TConstruct's master build file
+ * Authors: Sunstrike, ProgWML6
+ * Help from AbrarSyed
+*/
+
+buildscript {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+repositories {
+    mavenLocal()
+    maven {
+        name 'ForgeFS'
+        url 'http://files.minecraftforge.net/maven'
+    }
+        maven {
+        name 'CB Maven FS'
+        url "http://chickenbones.net/maven/"
+    }
+    maven {
+        name 'DVS1 Maven FS'
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+}
+
+group = 'slimeknights.mantle'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+// sets version to the slimeKnights version format
+task buildInfo {
+    def cmd = "git rev-parse --short HEAD"
+    def proc = cmd.execute()
+    proc.waitFor()
+    if (proc.exitValue() == 0) {
+        ext.revision = proc.text.trim()
+    } else {
+        ext.revision = "GITBORK"
+    }
+
+    if (System.getenv().BUILD_NUMBER != null) {
+        ext.buildNum = "${System.getenv().BUILD_NUMBER}"
+    } else {
+        ext.buildNum = "DEV.${project.buildInfo.revision}"
+    }
+}
+ext.artifact_version = 'NFG'
+if (System.getenv().ARTIFACT_VERSION == null) {
+    artifact_version = "${mod_version}.${project.buildInfo.buildNum}"
+}
+if (System.getenv().ARTIFACT_VERSION != null) {
+    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
+}
+
+version = "${minecraft_version}-${artifact_version}"
+
+minecraft {
+    version = minecraft_version + "-" + forge_version
+    mappings = mappings_version
+    runDir = 'run'
+    useDepAts = true
+    replace '${version}', project.version
+}
+
+configurations {
+    shadow
+    compile.extendsFrom shadow
+}
+
+dependencies {
+    //compile "codechicken:CodeChickenLib:${minecraft_version}-${CCLIB_version}:dev"
+    //compile "codechicken:CodeChickenCore:${minecraft_version}-${ccc_version}:dev"
+    //compile "codechicken:NotEnoughItems:${minecraft_version}-${NEI_version}:dev"
+    deobfCompile "mezz.jei:jei_${minecraft_version}:${jei_version}"
+    // Configuration
+    shadow "ninja.leaping.configurate:configurate-hocon:${configurate_version}"
+    //shade "ninja.leaping.configurate:configurate-gson:${configurate_version}"
+}
+
+processResources
+{
+    inputs.property "version", artifact_version
+    inputs.property "MCversion", minecraft_version
+    // replace stuff in text files, not binary ones.
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/*.info'
+        // replace version and MCVersion
+        expand 'version':artifact_version,'MCversion':minecraft_version
+    }
+    // copy everything else, thats not text
+    from(sourceSets.main.resources.srcDirs) {
+        exclude '**/*.info'
+    }
+}
+
+jar {
+    manifest {
+        attributes 'FMLAT': 'mantle_at.cfg'
+    }
+    
+    dependsOn shadowJar
+    enabled = false
+    finalizedBy reobfJar
+}
+
+shadowJar {
+    archiveName = tasks.jar.archiveName
+    configurations = [project.configurations.shadow]
+    relocate 'ninja.leaping.configurate', 'slimeknights.mantle.configurate'
+    relocate 'com.typesafe', 'slimeknights.mantle.typesafe'
+    dependencies {
+        exclude(dependency('com.google.guava:guava:'))
+    }
+}
+
+// because the normal output has been made to be obfuscated
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+    manifest {
+        attributes 'FMLAT': 'mantle_deobf_at.cfg'
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    classifier = 'sources'
+}
+
+artifacts {
+    archives deobfJar
+    archives sourcesJar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+            artifact deobfJar
+            artifact sourcesJar
+        }
+    }
+
+    repositories {
+        if (project.hasProperty('DEPLOY_DIR')) {
+            maven { url DEPLOY_DIR }
+        }
+    }
+}

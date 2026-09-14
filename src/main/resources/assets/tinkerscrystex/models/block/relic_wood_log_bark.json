@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tinkerscrystex:blocks/relic_wood_log"
+  }
+}

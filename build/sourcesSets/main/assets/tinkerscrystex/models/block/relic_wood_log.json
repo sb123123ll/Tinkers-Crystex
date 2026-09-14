@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tinkerscrystex:blocks/relic_wood_log_top",
+    "side": "tinkerscrystex:blocks/relic_wood_log"
+  }
+}

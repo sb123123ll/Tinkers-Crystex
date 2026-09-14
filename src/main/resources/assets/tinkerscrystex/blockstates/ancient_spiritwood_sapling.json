@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "tinkerscrystex:ancient_spiritwood_sapling" },
+        "stage=1": { "model": "tinkerscrystex:ancient_spiritwood_sapling" }
+    }
+}

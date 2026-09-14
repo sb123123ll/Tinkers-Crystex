@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "check_decay=true,decayable=true": { "model": "tinkerscrystex:ancient_spiritwood_leaves" },
+        "check_decay=false,decayable=true": { "model": "tinkerscrystex:ancient_spiritwood_leaves" },
+        "check_decay=true,decayable=false": { "model": "tinkerscrystex:ancient_spiritwood_leaves" },
+        "check_decay=false,decayable=false": { "model": "tinkerscrystex:ancient_spiritwood_leaves" }
+    }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "tinkerscrystex",
+  "name": "Tinkers' Crystex",
+  "description": "A Tinkers' Construct addon adding new materials, blocks and ancient elements.",
+  "version": "beta-0.1.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Qiamao"],
+  "credits": "Created by Qiamao.",
+  "logoFile": "logo.png",
+  "screenshots": [],
+  "dependencies": ["tconstruct"]
+}
+]

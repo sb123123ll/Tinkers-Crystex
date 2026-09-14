@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "tinkerscrystex:blocks/ancient_spiritwood_log_top",
+        "side": "tinkerscrystex:blocks/ancient_spiritwood_log"
+    }
+}

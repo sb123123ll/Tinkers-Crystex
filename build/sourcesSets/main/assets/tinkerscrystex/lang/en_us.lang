@@ -1,0 +1,105 @@
+# Entities
+entity.tinkerscrystex.frost_zombie.name=Frost Zombie
+item.tinkerscrystex.frost_zombie.name=Spawn Frost Zombie
+entity.tinkerscrystex.brown_shell.name=Brown Shell
+item.tinkerscrystex.brown_shell.name=Spawn Brown Shell
+
+itemGroup.tinkerscrystex=Tinkers' Crystex
+item.tinkerscrystex.frost_steel_ingot.name=Frost Steel Ingot
+item.tinkerscrystex.frost_steel_nugget.name=Frost Steel Nugget
+
+
+tile.tinkerscrystex.frost_steel_ore.name=Frost Steel Ore
+tile.tinkerscrystex.frost_steel_block.name=Frost Steel Block
+
+tile.tinkerscrystex.zeolite.name=Zeolite
+
+tile.tinkerscrystex.wolframite_ore.name=Wolframite Ore
+tile.tinkerscrystex.wolframite_block.name=Wolframite Block
+
+item.tinkerscrystex.abyssalite_ingot.name=Abyssalite Ingot
+item.tinkerscrystex.abyssalite_nugget.name=Abyssalite Nugget
+tile.tinkerscrystex.abyssalite_ore.name=Abyssalite Ore
+tile.tinkerscrystex.abyssalite_block.name=Abyssalite Block
+
+item.tinkerscrystex.wolframite_ingot.name=Wolframite Ingot
+item.tinkerscrystex.wolframite_nugget.name=Wolframite Nugget
+
+item.tinkerscrystex.pyroclast_crystal.name=Pyroclast Crystal
+item.tinkerscrystex.pyroclast_crystal_nugget.name=Pyroclast Crystal Nugget
+tile.tinkerscrystex.pyroclast_crystal_ore.name=Pyroclast Crystal Ore
+tile.tinkerscrystex.pyroclast_crystal_block.name=Pyroclast Crystal Block
+
+item.tinkerscrystex.thorniron_ingot.name=Thorniron Ingot
+item.tinkerscrystex.thorniron_nugget.name=Thorniron Nugget
+tile.tinkerscrystex.thorniron_ore.name=Thorniron Ore
+tile.tinkerscrystex.thorniron_block.name=Thorniron Block
+
+tooltip.tinkerscrystex.frost_steel_ingot=§9Steel forged in extreme cold, chilling to the bone.
+tooltip.tinkerscrystex.abyssalite_ingot=§9A mineral from the deep abyss, withstanding immense water pressure.
+tooltip.tinkerscrystex.pyroclast_crystal=§9A crystal containing unstable fire streams, ready to detonate.
+tooltip.tinkerscrystex.thorniron_ingot=§9Symbiosis of metal and plant, covered in poisonous spikes.
+tooltip.tinkerscrystex.antimony_alloy_ingot=§9An incredibly hard alloy, gleaming with a mesmerizing purplish-red luster.
+tooltip.tinkerscrystex.ancient_spiritwood_log=§9Ancient wood radiating with End aura, hard and mysterious.
+
+fluid.froststeel=Molten Frost Steel
+fluid.tinkerscrystex.fluid_zeolite=Molten Zeolite
+fluid.zeolite=Molten Zeolite
+fluid.tinkerscrystex.fluid_wolframite=Molten Wolframite
+fluid.wolframite=Molten Wolframite
+fluid.pyroclast_crystal=Molten Pyroclast Crystal
+fluid.thorniron=Molten Thorniron
+
+material.froststeel.name=Frost Steel
+material.zeolite.name=Zeolite
+material.wolframite.name=Wolframite
+material.pyroclast_crystal.name=Pyroclast Crystal
+material.thorniron.name=Thorniron
+
+# Traits
+modifier.crystex_frost.name=Frost
+modifier.crystex_frost.desc=§bSlowly freezing...§r\nYour attacks apply Slowness to enemies, as if engulfed by severe cold.
+
+modifier.crystex_catalysis.name=Catalysis
+modifier.crystex_catalysis.desc=§9XP Multiplier\n§rMining or attacking has a chance to double the dropped XP orbs. (20% for head, 10% for others)
+
+modifier.crystex_molten_core.name=Molten Core
+modifier.crystex_molten_core.desc=§6Molten Core\n§r+45% mining speed, +25% damage, and auto-smelts mined ores. Fails and applies severe penalties in water or rain.
+
+modifier.crystex_heavy_crush.name=Heavy Crush
+modifier.crystex_heavy_crush.desc=§8Heavy Crush\n§rProvides extremely high handle modifier. 20% chance to root targets for 2 seconds on hit. Fails in water or rain.
+
+modifier.crystex_hydrolysis.name=Hydrolysis
+modifier.crystex_hydrolysis.desc=§9Hydrolysis\n§rFatal weakness. When touching water or in rain, mining speed -70%, damage -50%, and tool rapidly loses durability. Cannot be repaired while hydrolyzed.
+
+effect.tinkerscrystex.root=Root
+modifier.crystex_abyssal_pressure.desc=§9Crushing weight of the abyss...§r\nIncreased mining speed and damage while in water. Attacks have a chance to launch enemies and drain their air. Decreased stats on land.
+
+modifier.crystex_unstable.name=Unstable
+modifier.crystex_unstable.desc=§cOn the edge of frenzy!§r\nSignificantly increased mining speed and damage when durability is extremely low, but every use has a chance to consume extra durability.
+
+modifier.crystex_briar_sting.name=Briar Sting
+modifier.crystex_briar_sting.desc=§2A fatal embrace...§r\nWhen attacked, reflects a percentage of damage back to the attacker and has a chance to inflict poison.
+
+modifier.crystex_aura.name=Aura
+modifier.crystex_aura.desc=§3Absorbing the essence...§r\nTools gain significant mining speed and durability regeneration in specific environments (The End or deep underground), with a slight speed boost at night.
+
+modifier.crystex_regrowth.name=Regrowth
+modifier.crystex_regrowth.desc=§aEndless vitality.§r\nTools slowly repair themselves when not in use, up to 80% durability.
+
+tile.tinkerscrystex.ancient_spiritwood_log.name=Ancient Spiritwood Log
+tile.tinkerscrystex.ancient_spiritwood_planks.name=Ancient Spiritwood Planks
+tile.tinkerscrystex.ancient_spiritwood_leaves.name=Ancient Spiritwood Leaves
+tile.tinkerscrystex.ancient_spiritwood_sapling.name=Ancient Spiritwood Sapling
+tile.tinkerscrystex.void_weeping_vines.name=Void Weeping Vines
+
+# Materials
+material.relic_wood.name=Relic Wood
+modifier.crystex_soulbound.name=Soulbound
+modifier.crystex_soulbound.desc=§bForged with souls.§r\nWhen the tool is about to break, if you have 5+ levels of XP, it consumes 5 levels to instantly restore full durability.
+modifier.crystex_ancient_echo.name=Ancient Echo
+modifier.crystex_ancient_echo.desc=§eWhispers in time.§r\nHandle part decreases mining speed by 10%, but mining blocks drops double XP.
+
+# Biomes
+biome.soulwood_hollow.name=Soulwood Hollow
+tile.relic_knot.name=Relic Knot

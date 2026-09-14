@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: Tinkers' Crystex
+Implementation-Version: 
+Specification-Vendor: qiamao
+Specification-Title: tinkerscrystex
+Implementation-Timestamp: 2026-09-01T23:45:34+0800
+Specification-Version: 1
+Implementation-Vendor: qiamao
+

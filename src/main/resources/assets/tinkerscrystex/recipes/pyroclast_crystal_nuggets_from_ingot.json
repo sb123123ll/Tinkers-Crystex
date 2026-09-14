@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "ingotPyroclastCrystal"
+    }
+  ],
+  "result": {
+    "item": "tinkerscrystex:pyroclast_crystal_nugget",
+    "count": 9
+  }
+}
